@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Rubik:wght@300;400;500;600&display=swap');
 
+/* Css reset */
+
 :root {
   --primary-color: #ff6b6b;
   --secondary-color: #794afa;
   --secondary-dark-color: #453c5c;
 
   --white-color: #fff;
-  --ligth-bg-color: #f2f3f5;
-  --border-color: #e5e8ec;
+  --light-bg-color: #f2f3f5;
+  --light-text-color: #7c899a;
   --border-color: #e5e8ec;
   --dark-color: #0a021c;
 
@@ -108,4 +110,115 @@ h3 {
 h4 {
   font-size: 1em;
   font-weight: var(--fw6);
+}
+
+/* Reusable selector */
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 0.938em;
+}
+
+.column {
+  margin-left: -0.938em;
+  margin-right: -0.938em;
+}
+
+.column .row {
+  padding: 0 0.938em;
+}
+
+.flexswrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flexcenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexitem {
+  display: flex;
+  align-items: center;
+}
+
+.flexcol {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.main-links a:hover {
+  color: var(--secondary-color);
+}
+.second-links a:hover {
+  color: var(--light-text-color);
+}
+
+.icon-small,
+.icon-large {
+  display: flex;
+  align-items: center;
+  padding: 0 0.025em;
+  font-weight: normal;
+}
+
+.icon-small {
+  font-size: 1.25em;
+  margin: auto;
+}
+
+.icon-large {
+  font-size: 1.75em;
+  padding: 0 0.75em;
+}
+
+/* Structure Styling 
+    00. Reusable selector 
+    01. Header 
+        a. Header top
+        b. Header nav
+        c. Header main , Departments Category
+        d. Search form 
+        e. Reponsive menu - Off canvas
+    02. Slider 
+    03. Brands
+    04. Product
+        a. Global product 
+        b. Big product
+        c. Mini product 
+        d. Main product
+    05. Banner 
+        a. New letter 
+        b. Widgets 
+        c. Footer info
+    06. Bottom menu 
+        a. Search 
+    07. Overlay 
+    08. Page single 
+        a. Breadcrumb
+        b. Product details
+        c. Product decription 
+        d. Product preview 
+        e. Product preview form
+    09. Page single: special offer
+    10. Page category 
+        a. Sidebar products filter
+        b. Product block
+    11. Cart
+    12. Page cart
+    13. Page checkout
+    14. Model 
+    15. Reponsive 
+*/
+
+
+
+@media screen and (min-width: 992px) {
+  .container {
+    padding: 0 2em;
+  }
 }
