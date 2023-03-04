@@ -168,7 +168,7 @@ h4 {
 
 .icon-small {
   font-size: 1.25em;
-  margin: auto;
+  margin-left: auto;
 }
 
 .icon-large {
@@ -205,6 +205,20 @@ h4 {
   transform: var(--trans-background-color);
 }
 
+.logo-button {
+  font-size: var(--font-small);
+  padding: 0.5em 1em;
+  height: auto;
+  width: fit-content;
+  border-radius: 2em;
+  transform: var(--trans-background-color);
+  background-color: var(--white-color);
+}
+
+.logo-button:hover {
+  border: 2px solid var(--secondary-color);
+}
+
 .primary-button {
   background-color: var(--primary-color);
   color: var(--white-color);
@@ -231,6 +245,18 @@ h4 {
 .light-button:hover {
   background-color: var(--secondary-dark-color);
   color: var(--white-color);
+}
+
+.view-all {
+  font-size: var(--font-small);
+  display: flex;
+  gap: 1em;
+  transform: var(--trans-color);
+}
+
+.mini-text {
+  font-size: var(--font-smaller);
+  color: var(--light-text-color);
 }
 
 /* Structure Styling 
@@ -273,6 +299,7 @@ h4 {
 */
 
 /* 01. Header */
+
 header li > a {
   display: flex;
   position: relative;
@@ -282,6 +309,7 @@ header li > a {
 
 /* 01. Header */
 /* a. Header top */
+
 .header-top .wrapper {
   font-size: var(--font-small);
   font-weight: var(--fw3);
@@ -321,6 +349,7 @@ header li > a {
 
 /* 01. Header  */
 /* b. Header nav */
+
 .header-nav {
   padding: 0.5em 0;
   border-bottom: 1px solid var(--border-color);
@@ -414,6 +443,98 @@ nav .fly-item {
   z-index: 1;
 }
 
+/* 01. Header */
+/* c. Header main, Departments Category */
+
+.header-main {
+  background-color: var(--secondary-dark-color);
+  padding: 1.5em 0;
+  margin-bottom: 2em;
+}
+
+.dpt-cat {
+  position: relative;
+  z-index: 10;
+}
+
+.dpt-cat .dpt-head {
+  position: relative;
+  width: 300px;
+  padding: 0.75em 1.5em;
+  background-color: var(--primary-color);
+  border-radius: 7px 7px 0 0;
+  color: var(--white-color);
+  margin-bottom: -2.15em;
+}
+
+.dpt-cat .dpt-head .mini-text {
+  color: var(--light-bg-color);
+}
+
+.dpt-cat .dpt-trigger {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 1.3em;
+  height: 60px;
+  width: 60px;
+}
+
+.dpt-menu > ul > li > a {
+  font-size: var(--font-small);
+  height: 46px;
+  align-items: center;
+}
+
+.dpt-menu .has-child:hover ul {
+  display: block;
+}
+
+/* 01. Header */
+/* d. Search form */
+
+.header-main .right {
+  flex: 1;
+}
+
+form {
+  position: relative;
+}
+
+form.search input {
+  line-height: 3.25em;
+  padding: 0 7em 0 4.5em;
+  border: 0;
+  outline: 0;
+  width: var(--percent100);
+  border-radius: 7px;
+  font-size: 0.9em;
+  font-weight: var(--fw3);
+}
+
+form.search :where(span, button) {
+  position: absolute;
+  top: 0;
+  padding: 0.55em;
+  color: var(--light-text-color);
+  height: var(--percent100);
+}
+
+form.search button {
+  right: 0;
+  border: 0;
+  font-size: 0.875em;
+  font-weight: var(--fw6);
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-radius: 0 7px 7px 0;
+  cursor: pointer;
+  transition: var(--trans-background-color);
+}
+
+form.search button:hover {
+  background-color: var(--dark-color);
+}
 @media screen and (min-width: 992px) {
   .container {
     padding: 0 2em;
@@ -442,6 +563,7 @@ nav .fly-item {
   }
 
   /* mega menu */
+
   nav .mega {
     position: absolute;
     width: var(--percent100);
@@ -513,5 +635,75 @@ nav .fly-item {
 
   nav .products .media .thumbnail img {
     border-radius: 10px;
+  }
+
+  nav .mega .view-all {
+    color: var(--secondary-dark-color);
+    font-weight: var(--fw6);
+  }
+
+  nav .mega .msi {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 180px;
+  }
+
+  nav .mega .msi li {
+    min-width: 80px;
+  }
+
+  .header-main .right {
+    max-width: 600px;
+    margin-left: auto;
+  }
+
+  /* Departments menu */
+  .dpt-menu {
+    position: absolute;
+    top: var(--percent100);
+    width: 300px;
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-top: 0;
+    border-bottom: 0;
+  }
+
+  .dpt-menu > ul > li > a {
+    font-weight: var(--fw5);
+    padding: 1em 1.5em;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .dpt-menu .has-child > ul {
+    position: absolute;
+    top: 0;
+    left: var(--percent100);
+    width: var(--percent100);
+    height: auto;
+    min-height: var(--percent100);
+    padding: 1.5em;
+    font-size: var(--font-small);
+    line-height: 2.5em;
+    border: 1px solid var(--border-color);
+    border-top: 0;
+    border-bottom-right-radius: 10px;
+    display: none;
+    font-size: 15px;
+    font-weight: var(--fw5);
+  }
+
+  .dpt-menu .phone ul li button {
+    margin: 1em;
+    width: 150px;
+  }
+
+  .dpt-menu .laptop ul li button {
+    margin: 0.4em;
+    width: 120px;
+  }
+
+  .dpt-menu .tablet ul li button {
+    margin: 1em;
+    width: 150px;
   }
 }
